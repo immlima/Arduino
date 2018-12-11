@@ -4,7 +4,6 @@
 
 SoftwareSerial serial1(10, 11); // RX, TX
 
-
 int sensor = 12;
 int temp, hum;
 DHT dht (sensor, DHT11);
@@ -18,26 +17,10 @@ void setup() {
 void loop() {
   hum = dht.readHumidity();
   temp = dht.readTemperature();
-  /*
-    Serial.write("*T");
-    //Serial.print("\t");
-    Serial.write(temp);
-    //Serial.print("\n");
 
-    Serial.write("*H%d");
-    //Serial.print("\t");
-    Serial.write(hum);
-    //Serial.print("\n");
+  serial1.print("*T" + String(temp) + "*");
+  serial1.print("*H" + String(hum) + "*");
 
-  */
-
-  Serial.write(temp);
-  Serial.write("\n");
-
-  Serial.write(hum);
-  Serial.write("\n");
-
-
-  delay(5000);
+  delay(500);
 
 }
