@@ -12,7 +12,6 @@ void setup() {
   serial1.begin(9600);
   Serial.begin(9600);
   dht.begin();
-
 }
 void loop() {
   hum = dht.readHumidity();
@@ -22,5 +21,4 @@ void loop() {
   serial1.print("*H" + String(hum) + "*");
 
   delay(500);
-
 }
