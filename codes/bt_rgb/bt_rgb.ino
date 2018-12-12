@@ -20,17 +20,7 @@ void loop() {
   if (serial1.available()) {
     int byteRecebido = serial1.parseInt();
     porta = int(serial1.read() - 65);
-    ///analogWrite(pinPortas[porta], byteRecebido);
-
-    for (int fadeValue = 0 ; fadeValue <= byteRecebido; fadeValue += 5) {
-      analogWrite(pinPortas[porta], fadeValue);
-      delay(30);
-       Serial.println(fadeValue);
-    }
-    for (int fadeValue = byteRecebido ; fadeValue >= 0; fadeValue -= 5) {
-      analogWrite(pinPortas[porta], fadeValue);
-      delay(30);
-      Serial.println(fadeValue); 
-    }
-  }Serial.println(byteRecebido);
+    analogWrite(pinPortas[porta], byteRecebido);
+  }
+  delay(18);
 }
