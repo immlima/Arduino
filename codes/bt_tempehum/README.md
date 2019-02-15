@@ -1,0 +1,1 @@
+Projeto com comunicacao bluetooh, que apresenta a temperatura e a humidade ambiente 
